@@ -1,0 +1,1 @@
+to install a new font: use the command: npx expo install expo-font @expo-google-fonts/rubik (rubik is the font name)
