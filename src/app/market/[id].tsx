@@ -26,6 +26,7 @@ export default function Market() {
   const params = useLocalSearchParams<{ id: string }>();
 
   const qrLock = useRef(false);
+  console.log(params.id);
 
   async function fetchMarket() {
     try {
@@ -61,6 +62,8 @@ export default function Market() {
     try {
       setCouponIsFetching(true);
 
+      console.log("getCoupon", id);
+
       const { data } = await api.patch("/coupons/" + id);
 
       Alert.alert("Coupon", data.coupon);
@@ -90,7 +93,7 @@ export default function Market() {
 
   useEffect(() => {
     fetchMarket();
-  }, [params.id]);
+  }, [params.id, coupon]);
 
   if (isLoading) return <Loading />;
 
