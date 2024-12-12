@@ -13,9 +13,15 @@ export type CategoriesProps = {
 
 interface CategoriesComponentProps {
   data: CategoriesProps;
+  selected: string;
+  onSelect: (id: string) => void;
 }
 
-export function Categories({ data }: CategoriesComponentProps) {
+export function Categories({
+  data,
+  selected,
+  onSelect,
+}: CategoriesComponentProps) {
   return (
     <FlatList
       style={styles.container}
@@ -23,7 +29,12 @@ export function Categories({ data }: CategoriesComponentProps) {
       data={data}
       keyExtractor={(item) => item.id}
       renderItem={({ item }) => (
-        <Category key={item.id} name={item.name} iconId={item.id} />
+        <Category
+          name={item.name}
+          iconId={item.id}
+          isSelected={selected === item.id}
+          onPress={() => onSelect(item.id)}
+        />
       )}
       horizontal
       showsHorizontalScrollIndicator={false}
