@@ -7,9 +7,8 @@ import {
 } from "react-native";
 import { IconProps as TablerIconProps } from "@tabler/icons-react-native";
 
-import { styles } from "./styles";
 import { colors } from "@/styles/colors";
-import React from "react";
+import { styles } from "./styles";
 
 type ButtonProps = TouchableOpacityProps & {
   isLoading?: boolean;

@@ -1,10 +1,7 @@
-import { View, FlatList } from "react-native";
-import { IconProps } from "@tabler/icons-react-native";
-
-import { colors } from "@/styles/theme";
+import { FlatList } from "react-native";
+import { Category } from "../category";
 
 import { styles } from "./styles";
-import { Category } from "../category";
 
 export type CategoriesProps = {
   id: string;
