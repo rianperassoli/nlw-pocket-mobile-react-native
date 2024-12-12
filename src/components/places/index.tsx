@@ -33,7 +33,7 @@ export function Places({ data }: PlacesProps) {
         renderItem={({ item }) => (
           <Place
             data={item}
-            // onPress={() => router.navigate(`/market/${item.id}`)}
+            onPress={() => router.navigate(`/market/${item.id}`)}
           />
         )}
         contentContainerStyle={styles.content}
